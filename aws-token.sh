@@ -1,7 +1,7 @@
-ACCOUNT=123456789 #aws account number
-REGION=ap-south-1 #aws ECR region
-SECRET_NAME=${REGION}-ecr-registry #secret_name
-EMAIL=abc@xyz.com #can be anything
+ACCOUNT=123456789                                     #aws account number
+REGION=ap-south-1                                     #aws ECR region
+SECRET_NAME=${REGION}-ecr-registry                    #secret_name
+EMAIL=abc@xyz.com                                     #can be anything
 
 TOKEN=`aws ecr --region=$REGION get-authorization-token --output text --query authorizationData[].authorizationToken | base64 -d | cut -d: -f2`
 
