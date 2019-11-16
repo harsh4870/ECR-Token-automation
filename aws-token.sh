@@ -1,4 +1,4 @@
-ACCOUNT=123456789                                     #aws account number
+ACCOUNT=$(aws sts get-caller-identity --query 'Account' --output text) #aws account number
 REGION=ap-south-1                                     #aws ECR region
 SECRET_NAME=${REGION}-ecr-registry                    #secret_name
 EMAIL=abc@xyz.com                                     #can be anything
